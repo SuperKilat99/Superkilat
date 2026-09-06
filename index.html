@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ms">
 <head>
   <meta charset="UTF-8">
@@ -17,6 +18,8 @@
       --blue-dark: #0054c7;
       --cyan: #00cfff;
       --green: #61d600;
+      --orange: #ff5722;
+      --orange-dark: #e64a19;
       --dark: #071522;
       --text: #152333;
       --muted: #6d7c8c;
@@ -111,7 +114,6 @@
       gap: 25px;
     }
 
-    /* LOGO TANPA PADDING */
     .brand {
       display: flex;
       align-items: center;
@@ -152,7 +154,7 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 30px;
+      gap: 12px;
     }
 
     nav a {
@@ -162,19 +164,31 @@
       transition: .25s ease;
     }
 
-    nav a:hover {
+    nav a:not(.nav-button):hover {
       color: var(--blue);
     }
 
     .nav-button {
-      padding: 12px 20px;
+      padding: 11px 17px;
       border-radius: 50px;
-      background: var(--dark);
       color: white !important;
     }
 
-    .nav-button:hover {
-      background: var(--blue);
+    .nav-tiktok {
+      background: var(--dark);
+    }
+
+    .nav-tiktok:hover {
+      background: #000;
+      transform: translateY(-2px);
+    }
+
+    .nav-shopee {
+      background: var(--orange);
+    }
+
+    .nav-shopee:hover {
+      background: var(--orange-dark);
       transform: translateY(-2px);
     }
 
@@ -313,6 +327,18 @@
 
     .btn-outline:hover {
       background: rgba(255,255,255,.15);
+    }
+
+    .btn-shopee {
+      background: var(--orange);
+      color: white;
+      border: 0;
+    }
+
+    .btn-shopee:hover {
+      background: var(--orange-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(255,87,34,.25);
     }
 
     /* Bubble decoration */
@@ -585,20 +611,41 @@
       color: var(--dark);
     }
 
+    .product-buttons {
+      display: flex;
+      gap: 6px;
+    }
+
     .buy-btn {
       border: 0;
-      background: var(--blue);
       color: white;
       border-radius: 10px;
-      padding: 10px 13px;
-      font-size: 11px;
+      padding: 10px 11px;
+      font-size: 10px;
       font-weight: 800;
       cursor: pointer;
       transition: .2s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
     }
 
-    .buy-btn:hover {
-      background: var(--blue-dark);
+    .buy-tiktok {
+      background: var(--dark);
+    }
+
+    .buy-tiktok:hover {
+      background: #000;
+      transform: scale(1.04);
+    }
+
+    .buy-shopee {
+      background: var(--orange);
+    }
+
+    .buy-shopee:hover {
+      background: var(--orange-dark);
       transform: scale(1.04);
     }
 
@@ -658,6 +705,14 @@
       font-size: 14px;
       position: relative;
       z-index: 1;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
     }
 
     /* =========================
@@ -729,19 +784,25 @@
     }
 
     /* =========================
-       FLOATING BUTTON
+       FLOATING SHOP BUTTONS
     ========================= */
 
-    .floating-shop {
+    .floating-shops {
       position: fixed;
       right: 22px;
       bottom: 22px;
       z-index: 999;
       display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .floating-shop {
+      display: flex;
       align-items: center;
+      justify-content: center;
       gap: 9px;
       padding: 13px 18px;
-      background: var(--dark);
       color: white;
       border-radius: 50px;
       box-shadow: 0 15px 35px rgba(0,0,0,.2);
@@ -752,7 +813,22 @@
 
     .floating-shop:hover {
       transform: translateY(-4px);
-      background: var(--blue);
+    }
+
+    .floating-tiktok {
+      background: var(--dark);
+    }
+
+    .floating-tiktok:hover {
+      background: #000;
+    }
+
+    .floating-shopee {
+      background: var(--orange);
+    }
+
+    .floating-shopee:hover {
+      background: var(--orange-dark);
     }
 
     .floating-shop span {
@@ -762,17 +838,25 @@
       border-radius: 50%;
     }
 
+    .floating-shopee span {
+      background: white;
+    }
+
     /* =========================
        RESPONSIVE
     ========================= */
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1100px) {
       .product-grid {
         grid-template-columns: repeat(3, 1fr);
       }
 
       nav {
-        gap: 15px;
+        gap: 8px;
+      }
+
+      nav a {
+        font-size: 12px;
       }
 
       .hero-box {
@@ -781,6 +865,7 @@
     }
 
     @media (max-width: 760px) {
+
       .navbar {
         height: 68px;
         padding: 0 16px;
@@ -798,6 +883,11 @@
 
       nav a:not(.nav-button) {
         display: none;
+      }
+
+      .nav-button {
+        padding: 9px 11px;
+        font-size: 10px !important;
       }
 
       .hero {
@@ -868,8 +958,18 @@
         font-size: 16px;
       }
 
+      .product-bottom {
+        display: block;
+      }
+
+      .product-buttons {
+        margin-top: 10px;
+        width: 100%;
+      }
+
       .buy-btn {
-        padding: 9px 10px;
+        flex: 1;
+        padding: 9px 5px;
       }
 
       .cta-section {
@@ -881,8 +981,12 @@
         padding: 32px 25px;
       }
 
-      .cta .btn {
+      .cta-buttons {
         margin-top: 20px;
+      }
+
+      .cta-buttons .btn {
+        flex: 1;
       }
 
       .footer-inner {
@@ -894,9 +998,20 @@
         width: 85px;
         height: 85px;
       }
+
+      .floating-shops {
+        right: 12px;
+        bottom: 12px;
+      }
+
+      .floating-shop {
+        padding: 11px 15px;
+        font-size: 11px;
+      }
     }
 
     @media (max-width: 400px) {
+
       .brand-text {
         display: none;
       }
@@ -909,16 +1024,20 @@
         height: 165px;
       }
 
-      .product-bottom {
-        align-items: flex-end;
-        flex-direction: column;
+      .product-name {
+        min-height: 55px;
       }
 
       .buy-btn {
-        width: 100%;
+        font-size: 9px;
+      }
+
+      .nav-button {
+        font-size: 9px !important;
       }
     }
   </style>
+
 </head>
 
 <body>
@@ -930,46 +1049,52 @@
   <header>
     <div class="navbar">
 
-      <a href="#" class="brand">
+```
+  <a href="#home" class="brand">
 
-        <!--
-          SIMPAN LOGO ANDA SEBAGAI:
-          ./images/logo.png
+    <img
+      src="./images/logo.png"
+      alt="SuperKilat99"
+      class="brand-logo"
+    >
 
-          Logo akan dibesarkan sedikit menggunakan transform
-          supaya ruang kosong di sekeliling logo tidak kelihatan.
-        -->
-
-        <img
-          src="./images/logo.png"
-          alt="SuperKilat99"
-          class="brand-logo"
-        >
-
-        <div class="brand-text">
-          <strong>SuperKilat99</strong>
-          <span>Clean • Fresh • Kilat</span>
-        </div>
-
-      </a>
-
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#products">Produk</a>
-        <a href="#about">Tentang Kami</a>
-
-        <a
-          href="https://www.tiktok.com/"
-          target="_blank"
-          class="nav-button"
-        >
-          TikTok Shop
-        </a>
-      </nav>
-
+    <div class="brand-text">
+      <strong>SuperKilat99</strong>
+      <span>Clean • Fresh • Kilat</span>
     </div>
-  </header>
 
+  </a>
+
+  <nav>
+
+    <a href="#home">Home</a>
+    <a href="#products">Produk</a>
+    <a href="#about">Tentang Kami</a>
+
+    <a
+      href="https://www.tiktok.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="nav-button nav-tiktok"
+    >
+      ▶ TikTok
+    </a>
+
+    <a
+      href="https://shopee.com.my/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="nav-button nav-shopee"
+    >
+      🛍 Shopee
+    </a>
+
+  </nav>
+
+</div>
+```
+
+  </header>
 
   <!-- =========================
        HERO
@@ -977,318 +1102,386 @@
 
   <main>
 
-    <section class="hero" id="home">
+```
+<section class="hero" id="home">
 
-      <div class="hero-box">
+  <div class="hero-box">
 
-        <div class="bubble bubble-1"></div>
-        <div class="bubble bubble-2"></div>
-        <div class="bubble bubble-3"></div>
+    <div class="bubble bubble-1"></div>
+    <div class="bubble bubble-2"></div>
+    <div class="bubble bubble-3"></div>
 
-        <div class="hero-content">
+    <div class="hero-content">
 
-          <div class="hero-tag">
-            <i></i>
-            PRODUK PENCUCI PILIHAN
-          </div>
-
-          <h1>
-            Rumah Bersih.<br>
-            <span>Hidup Lebih Kilat.</span>
-          </h1>
-
-          <p>
-            Temui pilihan sabun dan produk pencuci berkualiti
-            untuk menjadikan kerja membersih lebih mudah,
-            cepat dan berkesan.
-          </p>
-
-          <div class="hero-actions">
-
-            <a href="#products" class="btn btn-primary">
-              🛒 Lihat Produk
-            </a>
-
-            <a
-              href="https://www.tiktok.com/"
-              target="_blank"
-              class="btn btn-outline"
-            >
-              ▶ TikTok Shop
-            </a>
-
-          </div>
-
-        </div>
-
+      <div class="hero-tag">
+        <i></i>
+        PRODUK PENCUCI PILIHAN
       </div>
 
-    </section>
-
-
-    <!-- =========================
-         FEATURES
-    ========================= -->
-
-    <section class="features">
-
-      <div class="feature-grid">
-
-        <div class="feature">
-          <div class="feature-icon">🧼</div>
-          <div>
-            <strong>Pembersihan Berkesan</strong>
-            <span>Untuk rumah yang lebih bersih</span>
-          </div>
-        </div>
-
-        <div class="feature">
-          <div class="feature-icon">💰</div>
-          <div>
-            <strong>Harga Menarik</strong>
-            <span>Berbaloi untuk kegunaan harian</span>
-          </div>
-        </div>
-
-        <div class="feature">
-          <div class="feature-icon">🚚</div>
-          <div>
-            <strong>Mudah Dibeli</strong>
-            <span>Terus ke platform pilihan anda</span>
-          </div>
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         PRODUCTS
-    ========================= -->
-
-    <section class="products-section" id="products">
-
-      <div class="section-header">
-
-        <div>
-          <div class="eyebrow">Koleksi Kami</div>
-
-          <h2>Produk Pilihan</h2>
-
-          <p>
-            Pilih produk anda dan terus buat pembelian.
-          </p>
-        </div>
-
-        <div class="search-box">
-
-          <span class="search-icon">⌕</span>
-
-          <input
-            type="text"
-            id="searchInput"
-            placeholder="Cari produk..."
-          >
-
-        </div>
-
-      </div>
-
-
-      <!-- CATEGORY -->
-
-      <div class="categories">
-
-        <button
-          class="category active"
-          data-category="all"
-        >
-          Semua
-        </button>
-
-        <button
-          class="category"
-          data-category="sabun"
-        >
-          Sabun
-        </button>
-
-        <button
-          class="category"
-          data-category="dapur"
-        >
-          Dapur
-        </button>
-
-        <button
-          class="category"
-          data-category="lantai"
-        >
-          Lantai
-        </button>
-
-        <button
-          class="category"
-          data-category="pakaian"
-        >
-          Pakaian
-        </button>
-
-      </div>
-
-
-      <!-- PRODUCT GRID -->
-
-      <div class="product-grid" id="productGrid">
-
-
-        <!-- PRODUCT 1 -->
-
-        <article
-          class="product-card"
-          data-category="sabun"
-          data-name="Sabun Cecair"
-        >
-
-          <div class="product-image">
-
-            <span class="badge">
-              Best Seller
-            </span>
-
-            <img
-              src="./images/solidred.jpeg"
-              alt="Sabun Cecair"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <div class="product-category">
-              Sabun
-            </div>
-
-            <div class="product-name">
-              NATOUCH MECHANIC HAND WASH ANTIBACTERIAL 500GM SOLID RED
-            </div>
-
-            <div class="product-bottom">
-
-              <div class="price">
-                RM9.90
-              </div>
-
-              <a
-                href="https://www.tiktok.com/"
-                target="_blank"
-                class="buy-btn"
-              >
-                BELI →
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-
-        <!-- PRODUCT 1 -->
-
-        <article
-          class="product-card"
-          data-category="sabun"
-          data-name="Sabun Cecair"
-        >
-
-          <div class="product-image">
-
-            <span class="badge">
-              Best Seller
-            </span>
-
-            <img
-              src="./images/solidblue.jpeg"
-              alt="Sabun Cecair"
-            >
-
-          </div>
-
-          <div class="product-info">
-
-            <div class="product-category">
-              Sabun
-            </div>
-
-            <div class="product-name">
-              NATOUCH MECHANIC HAND WASH ANTIBACTERIAL 500GM SOLID BLUE
-            </div>
-
-            <div class="product-bottom">
-
-              <div class="price">
-                RM9.90
-              </div>
-
-              <a
-                href="https://www.tiktok.com/"
-                target="_blank"
-                class="buy-btn"
-              >
-                BELI →
-              </a>
-
-            </div>
-
-          </div>
-
-        </article>
-       
-
-        
-
-        <div class="no-results" id="noResults">
-          😔 Produk tidak dijumpai.
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         CTA
-    ========================= -->
-
-    <section class="cta-section" id="about">
-
-      <div class="cta">
-
-        <div>
-          <h2>
-            Nak rumah lebih bersih & wangi?
-          </h2>
-
-          <p>
-            Jom lihat koleksi SuperKilat99 sekarang.
-          </p>
-        </div>
+      <h1>
+        Rumah Bersih.<br>
+        <span>Hidup Lebih Kilat.</span>
+      </h1>
+
+      <p>
+        Temui pilihan sabun dan produk pencuci berkualiti
+        untuk menjadikan kerja membersih lebih mudah,
+        cepat dan berkesan.
+      </p>
+
+      <div class="hero-actions">
+
+        <a href="#products" class="btn btn-primary">
+          🛒 Lihat Produk
+        </a>
 
         <a
           href="https://www.tiktok.com/"
           target="_blank"
-          class="btn btn-primary"
+          rel="noopener noreferrer"
+          class="btn btn-outline"
         >
-          🛍️ Beli Sekarang
+          ▶ TikTok Shop
+        </a>
+
+        <a
+          href="https://shopee.com.my/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-shopee"
+        >
+          🛍️ Shopee
         </a>
 
       </div>
 
-    </section>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FEATURES
+========================= -->
+
+<section class="features">
+
+  <div class="feature-grid">
+
+    <div class="feature">
+      <div class="feature-icon">🧼</div>
+      <div>
+        <strong>Pembersihan Berkesan</strong>
+        <span>Untuk rumah yang lebih bersih</span>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">💰</div>
+      <div>
+        <strong>Harga Menarik</strong>
+        <span>Berbaloi untuk kegunaan harian</span>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-icon">🚚</div>
+      <div>
+        <strong>Mudah Dibeli</strong>
+        <span>TikTok Shop atau Shopee</span>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section class="products-section" id="products">
+
+  <div class="section-header">
+
+    <div>
+
+      <div class="eyebrow">
+        Koleksi Kami
+      </div>
+
+      <h2>
+        Produk Pilihan
+      </h2>
+
+      <p>
+        Pilih produk anda dan terus buat pembelian.
+      </p>
+
+    </div>
+
+    <div class="search-box">
+
+      <span class="search-icon">
+        ⌕
+      </span>
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Cari produk..."
+      >
+
+    </div>
+
+  </div>
+
+
+  <!-- CATEGORY -->
+
+  <div class="categories">
+
+    <button
+      class="category active"
+      data-category="all"
+    >
+      Semua
+    </button>
+
+    <button
+      class="category"
+      data-category="sabun"
+    >
+      Sabun
+    </button>
+
+    <button
+      class="category"
+      data-category="dapur"
+    >
+      Dapur
+    </button>
+
+    <button
+      class="category"
+      data-category="lantai"
+    >
+      Lantai
+    </button>
+
+    <button
+      class="category"
+      data-category="pakaian"
+    >
+      Pakaian
+    </button>
+
+  </div>
+
+
+  <!-- PRODUCT GRID -->
+
+  <div class="product-grid" id="productGrid">
+
+
+    <!-- =========================
+         PRODUCT 1
+    ========================= -->
+
+    <article
+      class="product-card"
+      data-category="sabun"
+      data-name="NATOUCH MECHANIC HAND WASH ANTIBACTERIAL 500GM SOLID RED"
+    >
+
+      <div class="product-image">
+
+        <span class="badge">
+          Best Seller
+        </span>
+
+        <img
+          src="./images/solidred.jpeg"
+          alt="NATOUCH MECHANIC HAND WASH ANTIBACTERIAL 500GM SOLID RED"
+        >
+
+      </div>
+
+      <div class="product-info">
+
+        <div class="product-category">
+          Sabun
+        </div>
+
+        <div class="product-name">
+          NATOUCH MECHANIC HAND WASH ANTIBACTERIAL 500GM SOLID RED
+        </div>
+
+        <div class="product-bottom">
+
+          <div class="price">
+            RM9.90
+          </div>
+
+          <div class="product-buttons">
+
+            <a
+              href="https://www.tiktok.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="buy-btn buy-tiktok"
+            >
+              ▶ TikTok
+            </a>
+
+            <a
+              href="https://shopee.com.my/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="buy-btn buy-shopee"
+            >
+              🛍 Shopee
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- =========================
+         PRODUCT 2
+    ========================= -->
+
+    <article
+      class="product-card"
+      data-category="sabun"
+      data-name="NATOUCH MECHANIC HAND WASH ANTIBACTERIAL 500GM SOLID BLUE"
+    >
+
+      <div class="product-image">
+
+        <span class="badge">
+          Best Seller
+        </span>
+
+        <img
+          src="./images/solidblue.jpeg"
+          alt="NATOUCH MECHANIC HAND WASH ANTIBACTERIAL 500GM SOLID BLUE"
+        >
+
+      </div>
+
+      <div class="product-info">
+
+        <div class="product-category">
+          Sabun
+        </div>
+
+        <div class="product-name">
+          NATOUCH MECHANIC HAND WASH ANTIBACTERIAL 500GM SOLID BLUE
+        </div>
+
+        <div class="product-bottom">
+
+          <div class="price">
+            RM9.90
+          </div>
+
+          <div class="product-buttons">
+
+            <a
+              href="https://www.tiktok.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="buy-btn buy-tiktok"
+            >
+              ▶ TikTok
+            </a>
+
+            <a
+              href="https://shopee.com.my/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="buy-btn buy-shopee"
+            >
+              🛍 Shopee
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </article>
+
+
+    <!-- NO RESULTS -->
+
+    <div class="no-results" id="noResults">
+      😔 Produk tidak dijumpai.
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta-section" id="about">
+
+  <div class="cta">
+
+    <div>
+
+      <h2>
+        Nak rumah lebih bersih & wangi?
+      </h2>
+
+      <p>
+        Jom lihat koleksi SuperKilat99 sekarang.
+      </p>
+
+    </div>
+
+    <div class="cta-buttons">
+
+      <a
+        href="https://www.tiktok.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-outline"
+      >
+        ▶ TikTok Shop
+      </a>
+
+      <a
+        href="https://shopee.com.my/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-shopee"
+      >
+        🛍️ Beli di Shopee
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+```
 
   </main>
-
 
   <!-- =========================
        FOOTER
@@ -1296,93 +1489,114 @@
 
   <footer>
 
-    <div class="footer-inner">
+```
+<div class="footer-inner">
 
-      <div class="footer-brand">
+  <div class="footer-brand">
 
-        <img
-          src="./images/logo.png"
-          alt="SuperKilat99"
-          class="footer-logo"
-        >
+    <img
+      src="./images/logo.png"
+      alt="SuperKilat99"
+      class="footer-logo"
+    >
 
-        <p>
-          SuperKilat99 menyediakan pilihan sabun dan
-          produk pencuci untuk keperluan rumah anda.
-          Bersih, segar dan berbaloi.
-        </p>
+    <p>
+      SuperKilat99 menyediakan pilihan sabun dan
+      produk pencuci untuk keperluan rumah anda.
+      Bersih, segar dan berbaloi.
+    </p>
 
-      </div>
-
-
-      <div>
-
-        <h3>Menu</h3>
-
-        <div class="footer-links">
-
-          <a href="#home">
-            Home
-          </a>
-
-          <a href="#products">
-            Produk
-          </a>
-
-          <a href="#about">
-            Tentang Kami
-          </a>
-
-        </div>
-
-      </div>
+  </div>
 
 
-      <div>
+  <div>
 
-        <h3>Shopping</h3>
+    <h3>Menu</h3>
 
-        <div class="footer-links">
+    <div class="footer-links">
 
-          <a
-            href="https://www.tiktok.com/"
-            target="_blank"
-          >
-            TikTok Shop
-          </a>
+      <a href="#home">
+        Home
+      </a>
 
-          <a
-            href="https://shopee.com.my/"
-            target="_blank"
-          >
-            Shopee
-          </a>
+      <a href="#products">
+        Produk
+      </a>
 
-        </div>
-
-      </div>
+      <a href="#about">
+        Tentang Kami
+      </a>
 
     </div>
 
+  </div>
 
-    <div class="copyright">
-      © 2026 SuperKilat99. All Rights Reserved.
+
+  <div>
+
+    <h3>Shopping</h3>
+
+    <div class="footer-links">
+
+      <a
+        href="https://www.tiktok.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ▶ TikTok Shop
+      </a>
+
+      <a
+        href="https://shopee.com.my/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        🛍 Shopee
+      </a>
+
     </div>
+
+  </div>
+
+</div>
+
+
+<div class="copyright">
+  © 2026 SuperKilat99. All Rights Reserved.
+</div>
+```
 
   </footer>
 
+  <!-- =========================
+       FLOATING SHOP BUTTONS
+  ========================= -->
 
-  <!-- FLOATING SHOP BUTTON -->
+  <div class="floating-shops">
 
-  <a
-    href="https://www.tiktok.com/"
-    target="_blank"
-    class="floating-shop"
-  >
-    <span></span>
-    TikTok Shop
-  </a>
+```
+<a
+  href="https://www.tiktok.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="floating-shop floating-tiktok"
+>
+  <span></span>
+  ▶ TikTok Shop
+</a>
 
+<a
+  href="https://shopee.com.my/"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="floating-shop floating-shopee"
+>
+  <span></span>
+  🛍 Shopee
+</a>
+```
+
+  </div>
 
   <!-- =========================
        JAVASCRIPT
