@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SuperKilat99</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-sky-100 via-cyan-50 to-green-100 min-h-screen">
+  <header class="bg-gradient-to-r from-sky-600 via-cyan-500 to-green-500 text-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" class="w-14 h-14 rounded-full bg-white p-1" />
+        <div>
+          <h1 class="text-2xl font-black">SuperKilat99</h1>
+          <p class="text-xs">Sabun & Produk Pencuci Pilihan Malaysia</p>
+        </div>
+      </div>
+      <div class="hidden md:flex gap-6 font-semibold">
+        <a href="#produk">Produk</a>
+        <a href="#kategori">Kategori</a>
+        <a href="#promo">Promo</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="relative overflow-hidden bg-gradient-to-r from-sky-600 via-cyan-500 to-green-500 text-white py-20">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <span class="bg-white text-sky-700 px-4 py-2 rounded-full font-bold">✨ Harga Kilat Setiap Hari</span>
+        <h2 class="text-5xl font-black mt-6 leading-tight">Rumah Bersih,<br><span class="text-lime-200">Wangian Segar.</span></h2>
+        <p class="mt-6 text-lg">Laundry Liquid • Sabun Pinggan • Softener • Floor Cleaner • Peluntur.</p>
+        <div class="flex gap-4 mt-8 flex-wrap">
+          <a href="https://www.tiktok.com/@superkilat99" class="bg-black px-6 py-3 rounded-full font-bold">TikTok Shop</a>
+          <a href="https://shopee.com.my/superkilat99" class="bg-orange-500 px-6 py-3 rounded-full font-bold">Shopee Mall</a>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <img src="logo.png" class="w-80 drop-shadow-2xl animate-pulse" />
+      </div>
+    </div>
+  </section>
+
+  <section class="max-w-6xl mx-auto px-6 -mt-10">
+    <div class="bg-white rounded-3xl shadow-xl p-5">
+      <input id="search" type="text" placeholder="Cari produk pencuci..." class="w-full px-5 py-4 rounded-full border border-sky-200 outline-none" />
+    </div>
+  </section>
+
+  <section id="kategori" class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-black text-sky-700 mb-8">Kategori Popular</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-5 text-center">
+      <div class="bg-white p-5 rounded-3xl shadow">🧺<p class="mt-2 font-semibold text-sm">Sabun Basuh</p></div>
+      <div class="bg-white p-5 rounded-3xl shadow">🧴<p class="mt-2 font-semibold text-sm">Softener</p></div>
+      <div class="bg-white p-5 rounded-3xl shadow">🍋<p class="mt-2 font-semibold text-sm">Sabun Pinggan</p></div>
+      <div class="bg-white p-5 rounded-3xl shadow">🧽<p class="mt-2 font-semibold text-sm">Pencuci Lantai</p></div>
+      <div class="bg-white p-5 rounded-3xl shadow">🫧<p class="mt-2 font-semibold text-sm">Peluntur</p></div>
+      <div class="bg-white p-5 rounded-3xl shadow">🚽<p class="mt-2 font-semibold text-sm">Bilik Air</p></div>
+      <div class="bg-white p-5 rounded-3xl shadow">✨<p class="mt-2 font-semibold text-sm">Serbaguna</p></div>
+      <div class="bg-white p-5 rounded-3xl shadow">🧹<p class="mt-2 font-semibold text-sm">Aksesori</p></div>
+    </div>
+  </section>
+
+  <section id="promo" class="max-w-7xl mx-auto px-6">
+    <div class="rounded-[35px] bg-gradient-to-r from-sky-600 via-cyan-500 to-green-500 text-white p-10 shadow-2xl text-center">
+      <p class="font-bold text-yellow-200">PROMO SUPER KILAT 99</p>
+      <h2 class="text-5xl font-black mt-3">DISKAUN HINGGA 50%</h2>
+      <p class="mt-4">Laundry Liquid • Softener • Dishwashing • Floor Cleaner</p>
+      <a href="#produk" class="inline-block mt-6 bg-white text-sky-700 px-8 py-3 rounded-full font-bold">Lihat Produk</a>
+    </div>
+  </section>
+
+  <section id="produk" class="max-w-7xl mx-auto px-6 py-20">
+    <div class="flex justify-between items-center mb-10">
+      <h2 class="text-3xl font-black text-sky-700">Produk Pilihan</h2>
+      <span class="text-green-600 font-bold">🔥 Trending</span>
+    </div>
+
+    <div id="productList" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+  </section>
+
+  <section class="bg-gradient-to-r from-sky-700 to-green-600 py-16 text-white">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-6 text-center">
+      <div class="bg-white/20 rounded-3xl p-6">
+        <h3 class="text-4xl">🚚</h3>
+        <p class="mt-3 font-semibold">Fast Delivery</p>
+      </div>
+      <div class="bg-white/20 rounded-3xl p-6">
+        <h3 class="text-4xl">🌿</h3>
+        <p class="mt-3 font-semibold">Wangian Segar</p>
+      </div>
+      <div class="bg-white/20 rounded-3xl p-6">
+        <h3 class="text-4xl">🫧</h3>
+        <p class="mt-3 font-semibold">Bersih Maksimum</p>
+      </div>
+      <div class="bg-white/20 rounded-3xl p-6">
+        <h3 class="text-4xl">💙</h3>
+        <p class="mt-3 font-semibold">Harga Kilat</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-slate-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <img src="logo.png" class="w-24 mx-auto mb-4" />
+      <h2 class="text-3xl font-black">SuperKilat99</h2>
+      <p class="text-gray-400 mt-2">Sabun & Produk Pencuci Pilihan Malaysia</p>
+      <div class="flex justify-center gap-4 mt-6">
+        <a href="https://www.tiktok.com/@superkilat99" class="bg-black px-5 py-2 rounded-full">TikTok</a>
+        <a href="https://shopee.com.my/superkilat99" class="bg-orange-500 px-5 py-2 rounded-full">Shopee</a>
+      </div>
+      <p class="text-gray-500 mt-8 text-sm">© 2026 SuperKilat99. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/60123456789" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl">💬</a>
+
+  <script>
+    const products = [
+      {
+        name:"Laundry Liquid Floral 3.8L",
+        price:"RM18.90",
+        badge:"HOT SALE",
+        image:"https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=600&q=80",
+        tiktok:"https://www.tiktok.com/@superkilat99",
+        shopee:"https://shopee.com.my/superkilat99"
+      },
+      {
+        name:"Sabun Pinggan Lemon 900ml",
+        price:"RM5.90",
+        badge:"BEST SELLER",
+        image:"https://images.unsplash.com/photo-1583947581924-a6d7c7f6f0c4?auto=format&fit=crop&w=600&q=80",
+        tiktok:"https://www.tiktok.com/@superkilat99",
+        shopee:"https://shopee.com.my/superkilat99"
+      },
+      {
+        name:"Softener Lavender 2L",
+        price:"RM12.90",
+        badge:"NEW",
+        image:"https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80",
+        tiktok:"https://www.tiktok.com/@superkilat99",
+        shopee:"https://shopee.com.my/superkilat99"
+      },
+      {
+        name:"Pencuci Lantai Anti-Bakteria 2L",
+        price:"RM9.90",
+        badge:"PROMO",
+        image:"https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&w=600&q=80",
+        tiktok:"https://www.tiktok.com/@superkilat99",
+        shopee:"https://shopee.com.my/superkilat99"
+      },
+      {
+        name:"Peluntur Pakaian 1L",
+        price:"RM4.50",
+        badge:"MURAH",
+        image:"https://images.unsplash.com/photo-1626806787512-1d7cc031ee1a?auto=format&fit=crop&w=600&q=80",
+        tiktok:"https://www.tiktok.com/@superkilat99",
+        shopee:"https://shopee.com.my/superkilat99"
+      },
+      {
+        name:"Pembersih Serbaguna Spray 500ml",
+        price:"RM6.90",
+        badge:"HOT",
+        image:"https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
+        tiktok:"https://www.tiktok.com/@superkilat99",
+        shopee:"https://shopee.com.my/superkilat99"
+      }
+    ];
+
+    const list = document.getElementById("productList");
+    const search = document.getElementById("search");
+
+    function render(keyword=""){
+      list.innerHTML="";
+      products
+        .filter(p=>p.name.toLowerCase().includes(keyword.toLowerCase()))
+        .forEach(p=>{
+          list.innerHTML += `
+          <div class="bg-white rounded-[30px] shadow-xl overflow-hidden hover:-translate-y-2 transition">
+            <div class="bg-gradient-to-r from-green-400 to-cyan-400 text-white text-xs font-bold px-4 py-2">${p.badge}</div>
+            <img src="${p.image}" class="h-56 w-full object-cover">
+            <div class="p-5">
+              <h3 class="font-bold text-sky-700 text-lg">${p.name}</h3>
+              <p class="text-3xl font-black text-green-600 mt-3">${p.price}</p>
+              <div class="space-y-3 mt-5">
+                <a href="${p.tiktok}" target="_blank" class="block bg-black text-white text-center py-3 rounded-full font-bold">🛍️ TikTok Shop</a>
+                <a href="${p.shopee}" target="_blank" class="block bg-orange-500 text-white text-center py-3 rounded-full font-bold">🧡 Shopee</a>
+              </div>
+            </div>
+          </div>`;
+        });
+    }
+
+    render();
+    search.addEventListener("input",e=>render(e.target.value));
+  </script>
+</body>
+</html>
