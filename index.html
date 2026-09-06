@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SuperKilat99 | Sabun & Produk Pencuci</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#eef9ff;
+    color:#034b6e;
+}
+
+/* ===== HEADER ===== */
+
+header{
+    background:linear-gradient(90deg,#009dff,#00d0ff,#00b94d);
+    padding:15px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    position:sticky;
+    top:0;
+    z-index:999;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo img{
+    width:80px;
+}
+
+.logo h1{
+    color:white;
+    font-size:30px;
+    font-weight:800;
+}
+
+.logo p{
+    color:#e9ffff;
+    font-size:13px;
+}
+
+.search{
+    flex:1;
+    margin:15px;
+    min-width:250px;
+}
+
+.search input{
+    width:100%;
+    border:none;
+    outline:none;
+    border-radius:50px;
+    padding:13px 18px;
+    font-size:15px;
+}
+
+.market{
+    display:flex;
+    gap:10px;
+}
+
+.market a{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    padding:12px 16px;
+    border-radius:30px;
+}
+
+.tiktok{background:#111;}
+.shopee{background:#ff6200;}
+
+/* ===== HERO ===== */
+
+.hero{
+    background:
+    linear-gradient(rgba(255,255,255,.82),rgba(255,255,255,.82)),
+    url("https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=1400&q=80");
+    background-size:cover;
+    padding:70px 6%;
+}
+
+.hero-wrap{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    align-items:center;
+}
+
+.hero h2{
+    font-size:48px;
+    color:#0074d9;
+    line-height:1.1;
+}
+
+.hero h2 span{
+    color:#00b44b;
+}
+
+.hero p{
+    margin:20px 0;
+    font-size:18px;
+}
+
+.btn-group{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    color:white;
+    padding:15px 22px;
+    border-radius:40px;
+    font-weight:bold;
+}
+
+.hero img{
+    width:100%;
+    max-width:430px;
+    display:block;
+    margin:auto;
+}
+
+/* ===== CATEGORY ===== */
+
+.section{
+    padding:55px 6%;
+}
+
+.title{
+    font-size:34px;
+    color:#008cff;
+    margin-bottom:25px;
+}
+
+.categories{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+    gap:20px;
+}
+
+.cat{
+    background:white;
+    border-radius:20px;
+    padding:18px;
+    text-align:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.cat:hover{
+    transform:translateY(-5px);
+}
+
+.cat img{
+    width:70px;
+    height:70px;
+    object-fit:cover;
+    border-radius:50%;
+    margin-bottom:10px;
+}
+
+/* ===== PROMO ===== */
+
+.promo{
+    background:linear-gradient(90deg,#008cff,#00b84d);
+    color:white;
+    border-radius:25px;
+    padding:35px;
+    text-align:center;
+}
+
+.promo h2{
+    font-size:38px;
+}
+
+.promo p{
+    margin:10px 0 20px;
+    font-size:18px;
+}
+
+/* ===== PRODUCTS ===== */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.info{
+    padding:18px;
+}
+
+.badge{
+    background:#00c853;
+    color:white;
+    padding:4px 10px;
+    border-radius:20px;
+    font-size:12px;
+    display:inline-block;
+    margin-bottom:10px;
+}
+
+.price{
+    color:#00a651;
+    font-size:28px;
+    font-weight:800;
+    margin:10px 0;
+}
+
+.buy{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.buy a{
+    text-decoration:none;
+    color:white;
+    text-align:center;
+    padding:12px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+/* ===== FEATURE ===== */
+
+.feature{
+    background:white;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+}
+
+.box{
+    background:#dff5ff;
+    border-radius:20px;
+    text-align:center;
+    padding:25px;
+}
+
+.box h3{
+    margin:12px 0;
+    color:#008cff;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    margin-top:60px;
+    background:linear-gradient(180deg,#0078d7,#004f94);
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+footer img{
+    width:90px;
+    margin-bottom:15px;
+}
+
+.whatsapp{
+    position:fixed;
+    bottom:18px;
+    right:18px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    border-radius:50%;
+    color:white;
+    text-decoration:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    box-shadow:0 8px 15px rgba(0,0,0,.2);
+}
+
+@media(max-width:768px){
+.hero h2{
+    font-size:36px;
+}
+.logo h1{
+    font-size:24px;
+}
+}
+</style>
+
+</head>
+<body>
+
+<header>
+
+<div class="logo">
+<img src="logo.png">
+<div>
+<h1>SuperKilat99</h1>
+<p>Bersih Kilat • Harga Hebat Setiap Hari</p>
+</div>
+</div>
+
+<div class="search">
+<input type="text" id="search" placeholder="Cari sabun atau produk pencuci...">
+</div>
+
+<div class="market">
+<a class="tiktok" href="https://www.tiktok.com/@superkilat99" target="_blank">TikTok</a>
+<a class="shopee" href="https://shopee.com.my/superkilat99" target="_blank">Shopee</a>
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-wrap">
+
+<div>
+
+<h2>Bersih Rumah Jadi <span>Kilat ⚡</span></h2>
+
+<p>
+Pelbagai pilihan sabun, pencuci lantai, sabun pinggan, softener, peluntur dan produk kebersihan dengan harga paling berbaloi.
+</p>
+
+<div class="btn-group">
+<a href="https://www.tiktok.com/@superkilat99" class="btn tiktok">🛍️ TikTok Shop</a>
+
+<a href="https://shopee.com.my/superkilat99" class="btn shopee">🧡 Shopee Mall</a>
+</div>
+
+</div>
+
+<div>
+<img src="logo.png">
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="title">Kategori Produk</h2>
+
+<div class="categories">
+
+<div class="cat">
+<img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=200&q=80">
+<p>Sabun Basuh</p>
+</div>
+
+<div class="cat">
+<img src="https://images.unsplash.com/photo-1583947581924-a6d7c7f6f0c4?auto=format&fit=crop&w=200&q=80">
+<p>Sabun Pinggan</p>
+</div>
+
+<div class="cat">
+<img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&w=200&q=80">
+<p>Pencuci Lantai</p>
+</div>
+
+<div class="cat">
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=200&q=80">
+<p>Softener</p>
+</div>
+
+<div class="cat">
+<img src="https://images.unsplash.com/photo-1626806787512-1d7cc031ee1a?auto=format&fit=crop&w=200&q=80">
+<p>Peluntur</p>
+</div>
+
+<div class="cat">
+<img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=200&q=80">
+<p>Pembersih Serbaguna</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="promo">
+
+<h2>💧 PROMO SUPER KILAT 99</h2>
+
+<p>Diskaun sehingga 50% untuk produk pencuci pilihan!</p>
+
+<a href="#" class="btn shopee">Lihat Semua Promo</a>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="title">Produk Pilihan</h2>
+
+<div class="products" id="productContainer"></div>
+
+</section>
+
+<section class="section feature">
+
+<div class="box">
+<h3>🚚 Penghantaran Pantas</h3>
+<p>Seluruh Malaysia</p>
+</div>
+
+<div class="box">
+<h3>💧 Bersih Maksimum</h3>
+<p>Formula Berkesan</p>
+</div>
+
+<div class="box">
+<h3>🌿 Wangian Segar</h3>
+<p>Tahan Lama</p>
+</div>
+
+<div class="box">
+<h3>⭐ Harga Kilang</h3>
+<p>Murah Setiap Hari</p>
+</div>
+
+</section>
+
+<footer>
+
+<img src="logo.png">
+
+<h2>SuperKilat99</h2>
+
+<p>Sabun & Produk Pencuci Pilihan Malaysia</p>
+
+<p style="margin-top:15px;">©2026 SuperKilat99. Semua Hak Terpelihara.</p>
+
+</footer>
+
+<a class="whatsapp" href="https://wa.me/60123456789">💬</a>
+
+<script>
+
+const products=[
+
+{
+name:"Sabun Basuh Cecair Floral 3.8L",
+price:"RM18.90",
+badge:"HOT SALE",
+image:"https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=600&q=80",
+tiktok:"https://vt.tiktok.com/",
+shopee:"https://shopee.com.my/"
+},
+
+{
+name:"Sabun Pinggan Lemon 900ml",
+price:"RM5.90",
+badge:"BEST SELLER",
+image:"https://images.unsplash.com/photo-1583947581924-a6d7c7f6f0c4?auto=format&fit=crop&w=600&q=80",
+tiktok:"https://vt.tiktok.com/",
+shopee:"https://shopee.com.my/"
+},
+
+{
+name:"Softener Fresh Lavender 2L",
+price:"RM12.90",
+badge:"NEW",
+image:"https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80",
+tiktok:"https://vt.tiktok.com/",
+shopee:"https://shopee.com.my/"
+},
+
+{
+name:"Pencuci Lantai Anti-Bakteria 2L",
+price:"RM9.90",
+badge:"PROMO",
+image:"https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&w=600&q=80",
+tiktok:"https://vt.tiktok.com/",
+shopee:"https://shopee.com.my/"
+},
+
+{
+name:"Peluntur Pakaian 1L",
+price:"RM4.50",
+badge:"MURAH",
+image:"https://images.unsplash.com/photo-1626806787512-1d7cc031ee1a?auto=format&fit=crop&w=600&q=80",
+tiktok:"https://vt.tiktok.com/",
+shopee:"https://shopee.com.my/"
+},
+
+{
+name:"Pembersih Serbaguna Spray 500ml",
+price:"RM6.90",
+badge:"HOT",
+image:"https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80",
+tiktok:"https://vt.tiktok.com/",
+shopee:"https://shopee.com.my/"
+}
+
+];
+
+const container=document.getElementById("productContainer");
+
+function displayProduct(keyword=""){
+
+container.innerHTML="";
+
+products.filter(item=>item.name.toLowerCase().includes(keyword.toLowerCase()))
+
+.forEach(item=>{
+
+container.innerHTML += `
+
+<div class="card">
+
+<img src="${item.image}">
+
+<div class="info">
+
+<div class="badge">${item.badge}</div>
+
+<h3>${item.name}</h3>
+
+<div class="price">${item.price}</div>
+
+<div class="buy">
+
+<a class="tiktok" href="${item.tiktok}" target="_blank">
+🛍️ Beli di TikTok Shop
+</a>
+
+<a class="shopee" href="${item.shopee}" target="_blank">
+🧡 Beli di Shopee
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+displayProduct();
+
+document.getElementById("search").addEventListener("keyup",(e)=>{
+
+displayProduct(e.target.value);
+
+});
+
+</script>
+
+</body>
+</html>
